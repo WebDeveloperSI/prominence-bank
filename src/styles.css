@@ -1,0 +1,166 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Deep midnight navy palette */
+  --background: oklch(0.16 0.035 260);
+  --foreground: oklch(0.96 0.01 250);
+
+  --surface: oklch(0.20 0.035 260);
+  --surface-elevated: oklch(0.235 0.038 262);
+
+  --card: oklch(0.205 0.035 260);
+  --card-foreground: oklch(0.96 0.01 250);
+
+  --popover: oklch(0.225 0.038 262);
+  --popover-foreground: oklch(0.96 0.01 250);
+
+  --primary: oklch(0.68 0.16 245);
+  --primary-foreground: oklch(0.14 0.04 260);
+
+  --secondary: oklch(0.27 0.04 262);
+  --secondary-foreground: oklch(0.96 0.01 250);
+
+  --muted: oklch(0.245 0.035 262);
+  --muted-foreground: oklch(0.68 0.025 255);
+
+  --accent: oklch(0.30 0.05 262);
+  --accent-foreground: oklch(0.96 0.01 250);
+
+  --gold: oklch(0.82 0.13 86);
+  --gold-foreground: oklch(0.18 0.04 80);
+
+  --success: oklch(0.74 0.15 158);
+  --success-foreground: oklch(0.14 0.04 158);
+
+  --warning: oklch(0.80 0.16 70);
+  --warning-foreground: oklch(0.18 0.04 70);
+
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+
+  --border: oklch(0.30 0.035 262 / 60%);
+  --input: oklch(0.27 0.035 262);
+  --ring: oklch(0.68 0.16 245);
+
+  --chart-1: oklch(0.68 0.16 245);
+  --chart-2: oklch(0.82 0.13 86);
+  --chart-3: oklch(0.74 0.15 158);
+  --chart-4: oklch(0.70 0.17 295);
+  --chart-5: oklch(0.78 0.14 30);
+
+  --sidebar: oklch(0.18 0.035 260);
+  --sidebar-foreground: oklch(0.85 0.015 255);
+  --sidebar-primary: oklch(0.68 0.16 245);
+  --sidebar-primary-foreground: oklch(0.14 0.04 260);
+  --sidebar-accent: oklch(0.255 0.04 262);
+  --sidebar-accent-foreground: oklch(0.96 0.01 250);
+  --sidebar-border: oklch(0.27 0.035 262 / 60%);
+  --sidebar-ring: oklch(0.68 0.16 245);
+
+  /* Premium gradients & shadows */
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.32 0.10 250 / 0.55), transparent 70%), linear-gradient(180deg, oklch(0.18 0.04 260), oklch(0.14 0.035 260));
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.13 90), oklch(0.72 0.14 70));
+  --gradient-card: linear-gradient(180deg, oklch(0.235 0.04 262 / 0.9), oklch(0.20 0.035 260 / 0.9));
+  --gradient-mesh: radial-gradient(at 20% 10%, oklch(0.40 0.13 250 / 0.35), transparent 50%), radial-gradient(at 80% 30%, oklch(0.45 0.10 220 / 0.25), transparent 50%), radial-gradient(at 50% 90%, oklch(0.50 0.13 280 / 0.20), transparent 60%);
+
+  --shadow-elegant: 0 1px 0 0 oklch(1 0 0 / 0.05) inset, 0 20px 60px -20px oklch(0.05 0 0 / 0.6);
+  --shadow-glow: 0 0 0 1px oklch(0.68 0.16 245 / 0.3), 0 8px 32px -8px oklch(0.68 0.16 245 / 0.4);
+  --shadow-gold: 0 0 0 1px oklch(0.82 0.13 86 / 0.3), 0 8px 24px -8px oklch(0.82 0.13 86 / 0.35);
+
+  --grid-line: oklch(0.96 0.01 250 / 0.04);
+}
+
+.dark { /* same dark palette by default */ }
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+
+  body {
+    background-image: var(--gradient-mesh);
+    background-attachment: fixed;
+  }
+
+  .font-display { font-family: var(--font-display); font-feature-settings: "ss01"; letter-spacing: -0.02em; }
+  .font-mono-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+}
